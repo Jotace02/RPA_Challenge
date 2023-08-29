@@ -15,13 +15,13 @@ def main():
     navegador = webdriver.Chrome(service=servico)
 
     navegador.get("https://rpachallenge.com/")
-
+    #Seta botão de start
     xpath_botao = '/html/body/app-root/div[2]/app-rpa1/div/div[1]/div[6]/button'
-
+    #Clica no botão de start
     navegador.find_element('xpath',
                        xpath_botao
                        ).click()
-
+    #for que insere cada campo em cada campo
     for row in sheet.iter_rows(min_row=2, values_only=True):
         if row[0] is None:
             break
